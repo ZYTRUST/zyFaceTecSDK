@@ -1,22 +1,39 @@
+#
+# valid spec before submitting.
+#
+# Any lines starting with a # are optional, but their use is encouraged
+# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
+#
+
 Pod::Spec.new do |s|
-  s.name             = 'zyFaceTecSDK'
-  s.version          = '0.0.1'
-  s.summary          = 'FaceTecSDK empaquetado por ZyTrust con textos en espanol.'
-  s.description      = <<-DESC
-  Distribucion de FaceTecSDK.xcframework con el archivo de localizacion
-  en espanol FaceTec-es.strings. El modulo se importa como `import FaceTecSDK`.
-  DESC
+    s.name             = 'zyFaceTecSDK'
+    s.version          = '0.0.2'
+    s.summary          = 'Libreria Facial Proyecto de Biometria.'
+    
+    # This description is used to generate tags and improve search results.
+    #   * Think: What does it do? Why did you write it? What is the focus?
+    #   * Try to keep it short, snappy and to the point.
+    #   * Write the description between the DESC delimiters below.
+    #   * Finally, don't worry about the indent, CocoaPods strips it!
+    
+    s.description      = <<-DESC
+    Libreria Facial empresa RENIEC.
+    DESC
+    
+    s.homepage         = 'https://www.zytrust.com'
+    # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+    s.license          = { :type => 'MIT', :file => 'LICENSE' }
+    s.author           = { 'Ivan Caceres' => 'ztmobile@zytrust.com' }
+    s.source           = { :git => 'https://github.com/ZY-RENIEC/zy_lib_face_ios_reniec.git', :tag => s.version.to_s }
+    
+    s.ios.deployment_target = '13.0'
+    
+    s.swift_versions   = '5.0'
 
-  s.homepage         = 'https://www.zytrust.com'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Ivan Caceres' => 'ztmobile@zytrust.com' }
-  s.source           = { :git => 'https://github.com/ZY-RENIEC/zy_lib_face_ios_reniec.git', :tag => s.version.to_s }
+    
+    s.static_framework = true
+    
 
-  s.ios.deployment_target = '13.0'
 
-  # FaceTecSDK es un framework DINAMICO: no usar s.static_framework.
-  s.vendored_frameworks = 'Sources/FaceTecSDK.xcframework'
 
-  # Textos en espanol: se copian al bundle principal de la app.
-  s.resources = ['Sources/FaceTec-es.strings']
 end
